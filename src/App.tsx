@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import data from './components/etsy.json'
 import { Listing } from './components/Listing';

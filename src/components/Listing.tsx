@@ -1,8 +1,28 @@
+import React from "react";
 import { CurrencyCheck } from "./CurrencyCheck";
 import { CheckTextLength } from "./CheckTextLength";
 import { LevelCheck } from "./LevelCheck";
 
-export function Listing({items}) {
+interface MainImage {
+    url_570xN: string;
+}
+
+type Properties = {
+    state: string;
+    listing_id: number;
+    url?: string;
+    MainImage?: MainImage;
+    title?: string;
+    currency_code?: string;
+    price?: string;
+    quantity?: number;
+}
+
+type StartProps = {
+    items: Properties[]
+}
+
+export function Listing({items}: StartProps) {
 
     return (
         <div className="item-list">
@@ -12,7 +32,7 @@ export function Listing({items}) {
                         <div key={item.listing_id} className="item">
                             <div className="item-image">
                                 <a href={item.url}>
-                                    <img src={item.MainImage.url_570xN}/>
+                                {item.MainImage && <img src={item.MainImage.url_570xN}/>}
                                 </a>
                             </div>
                             <div className="item-details">

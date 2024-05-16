@@ -1,4 +1,4 @@
-export function CheckTextLength(text) {
+export function CheckTextLength(text?: string) {
     if (text && text.length >= 50) {
         return (text.slice(0, 50) + '...')
     }

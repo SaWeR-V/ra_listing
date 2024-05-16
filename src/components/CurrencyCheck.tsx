@@ -1,4 +1,4 @@
-export function CurrencyCheck(params) {
+export function CurrencyCheck(params?: string) {
     if (params === "USD") {
         return "$";
     }
